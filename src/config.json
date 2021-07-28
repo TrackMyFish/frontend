@@ -1,0 +1,7 @@
+{
+    "server": {
+        "host": "localhost",
+        "port": 8443,
+        "baseURL": "http://localhost:8443/v1alpha1"
+    }
+}
