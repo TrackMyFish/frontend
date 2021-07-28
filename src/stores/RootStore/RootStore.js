@@ -13,8 +13,32 @@ class RootStore {
   rootState = {
     fish: [],
 
-    heartbeat: null,
+    heartbeat: {
+      fishbase: {
+        status: "",
+      },
+    },
+
     error: null,
+  };
+
+  heartbeat = () => {
+    axios({
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      url: config.server.baseURL + "/heartbeat",
+    })
+      .then((res) => {
+        runInAction(() => {
+          this.rootState.heartbeat.fishbase.status =
+            res?.data?.fishbase?.status;
+        });
+      })
+      .catch((err) => {
+        console.log(err?.response?.data);
+      });
   };
 
   listFish = () => {
