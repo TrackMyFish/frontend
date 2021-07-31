@@ -12,6 +12,7 @@ const FishTable = observer((props) => {
   const [color, setColor] = useState("");
   const [gender, setGender] = useState("");
   const [purchaseDate, setPurchaseDate] = useState("");
+  const [count, setCount] = useState(0);
 
   const [err, setErr] = useState("");
 
@@ -29,6 +30,7 @@ const FishTable = observer((props) => {
       gender,
       uppercaseGender,
       purchaseDate,
+      count,
     });
   };
 
@@ -111,6 +113,11 @@ const FishTable = observer((props) => {
                 headerClassName: "text-start",
               },
             ],
+          },
+          {
+            Header: "Count",
+            accessor: "count",
+            headerClassName: "text-start",
           },
           {
             className: "text-center",
@@ -261,11 +268,28 @@ const FishTable = observer((props) => {
                           <input
                             type="date"
                             className="form-control"
-                            id="inputColor"
+                            id="inputPurchaseDate"
                             onChange={(e) =>
                               setErr("") || setPurchaseDate(e.target.value)
                             }
                             value={purchaseDate}
+                          />
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="mb-3">
+                          <label htmlFor="inputCount" className="form-label">
+                            Count
+                          </label>
+                          <input
+                            type="number"
+                            className="form-control"
+                            id="inputCount"
+                            min="0"
+                            onChange={(e) =>
+                              setErr("") || setCount(e.target.value)
+                            }
+                            value={count}
                           />
                         </div>
                       </div>
