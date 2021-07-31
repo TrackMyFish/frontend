@@ -67,6 +67,7 @@ class RootStore {
     color,
     gender,
     purchaseDate,
+    count,
   }) => {
     axios({
       method: "post",
@@ -82,6 +83,7 @@ class RootStore {
         color,
         gender: gender.toUpperCase(),
         purchaseDate,
+        count,
       },
     })
       .then((res) => {
