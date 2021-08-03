@@ -1,4 +1,5 @@
 @import './_extend.scss';
+@import './_variables.scss';
 
 @import '~bootstrap/scss/bootstrap';
 
@@ -7,3 +8,16 @@
     margin: 40vh auto 0 auto;
   }
 }
+
+.ReactTable .-even {
+  background-color: $table-bg;
+}
+
+.ReactTable .rt-thead {
+  background-color: $table-bg;
+}
+
+.ReactTable .rt-head .rt-th {
+  background-color: $table-bg;
+}
+
