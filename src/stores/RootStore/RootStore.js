@@ -69,6 +69,10 @@ class RootStore {
     purchaseDate,
     count,
   }) => {
+    if (gender === "") {
+      gender = "UNSPECIFIED";
+    }
+
     axios({
       method: "post",
       headers: {
