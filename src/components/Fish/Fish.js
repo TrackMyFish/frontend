@@ -3,18 +3,18 @@ import { observer } from "mobx-react";
 
 import { Navbar } from "../";
 import { FishTable } from "../";
-import { RootStoreContext } from "../../stores";
+import { FishStoreContext } from "../../stores";
 
-export const Home = observer(() => {
-  const { rootState, heartbeat, listFish, addFish, removeFish } =
-    useContext(RootStoreContext);
+export const Fish = observer(() => {
+  const { fishState, heartbeat, listFish, addFish, removeFish } =
+    useContext(FishStoreContext);
 
   useEffect(() => {
     listFish();
     heartbeat();
-  }, [rootState]);
+  }, [fishState]);
 
-  const fishbaseDown = rootState.heartbeat.fishbase.status.toLowerCase();
+  const fishbaseDown = fishState.heartbeat.fishbase.status.toLowerCase();
 
   return (
     <div>
@@ -33,14 +33,14 @@ export const Home = observer(() => {
             <p className="mb-0">
               This is unlikely to be an issue with TrackMyFish and you should
               check the{" "}
-              <a href="https://fishbase.ropensci.org/" class="alert-link">
+              <a href="https://fishbase.ropensci.org/" className="alert-link">
                 Fishbase API
               </a>{" "}
               for further details.
             </p>
             <button
               type="button"
-              class="btn-close"
+              className="btn-close"
               data-bs-dismiss="alert"
               aria-label="Close"
             ></button>
@@ -49,12 +49,13 @@ export const Home = observer(() => {
         </div>
       )}
       <FishTable
-        fish={rootState.fish}
+        fish={fishState.fish}
         addFish={addFish}
         removeFish={removeFish}
+        fishError={fishState.error}
       />
     </div>
   );
 });
 
-export default Home;
+export default Fish;

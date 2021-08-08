@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <nav
@@ -21,6 +23,16 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link" to="/fish">
+                Fish
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/tank">
+                Tank
+              </Link>
+            </li>
             <li className="nav-item dropdown">
               {/*  eslint-disable-next-line */}
               <a

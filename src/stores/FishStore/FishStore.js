@@ -5,12 +5,12 @@ import axios from "axios";
 
 import config from "../../config.json";
 
-class RootStore {
+class FishStore {
   constructor() {
     makeAutoObservable(this);
   }
 
-  rootState = {
+  fishState = {
     fish: [],
 
     heartbeat: {
@@ -32,7 +32,7 @@ class RootStore {
     })
       .then((res) => {
         runInAction(() => {
-          this.rootState.heartbeat.fishbase.status =
+          this.fishState.heartbeat.fishbase.status =
             res?.data?.fishbase?.status;
         });
       })
@@ -51,7 +51,7 @@ class RootStore {
     })
       .then((res) => {
         runInAction(() => {
-          this.rootState.fish = res.data.fish;
+          this.fishState.fish = res.data.fish;
         });
       })
       .catch((err) => {
@@ -92,13 +92,13 @@ class RootStore {
     })
       .then((res) => {
         runInAction(() => {
-          this.rootState.fish.push(res?.data?.fish);
+          this.fishState.fish.push(res?.data?.fish);
         });
       })
       .catch((err) => {
         runInAction(() => {
           console.log(err);
-          this.rootState.error = err?.response?.data?.message;
+          this.fishState.error = err?.response?.data?.message;
         });
       });
   };
@@ -113,18 +113,18 @@ class RootStore {
     })
       .then(() => {
         runInAction(() => {
-          this.rootState.fish = this.rootState.fish.filter((e) => e.id !== id);
+          this.fishState.fish = this.fishState.fish.filter((e) => e.id !== id);
         });
       })
       .catch((err) => {
         runInAction(() => {
           console.log(err);
-          this.rootState.error = err?.response?.data?.message;
+          this.fishState.error = err?.response?.data?.message;
         });
       });
   };
 }
 
-const rootStore = new RootStore();
-const RootStoreContext = React.createContext(rootStore);
-export default RootStoreContext;
+const fishStore = new FishStore();
+const FishStoreContext = React.createContext(fishStore);
+export default FishStoreContext;
