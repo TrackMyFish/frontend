@@ -1,7 +1,9 @@
 import Admin from "./Admin";
 import App from "./App";
-import Home from "./Home";
+import Fish from "./Fish";
 import Navbar from "./Navbar";
 import FishTable from "./FishTable";
+import Tank from "./Tank";
+import TankStatisticsTable from "./TankStatisticsTable";
 
-export { Admin, App, Home, Navbar, FishTable };
+export { Admin, App, Fish, Navbar, FishTable, Tank, TankStatisticsTable };

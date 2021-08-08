@@ -1,3 +1,4 @@
-import RootStoreContext from "./RootStore";
+import FishStoreContext from "./FishStore";
+import TankStoreContext from "./TankStore";
 
-export { RootStoreContext };
+export { FishStoreContext, TankStoreContext };

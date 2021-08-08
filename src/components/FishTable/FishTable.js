@@ -78,7 +78,7 @@ const FishTable = observer((props) => {
             Header: "Gender",
             accessor: "gender",
             headerClassName: "text-start",
-            Cell: ({ value }) => (value == "UNSPECIFIED" ? "" : value),
+            Cell: ({ value }) => (value === "UNSPECIFIED" ? "" : value),
           },
           {
             Header: "Purchase Date",
