@@ -1,7 +1,9 @@
 import React from "react";
 import { observer } from "mobx-react";
 import {
-  BrowserRouter as Router,
+  // HashRouter because it works better with backend routing
+  // https://github.com/gorilla/mux/issues/464
+  HashRouter as Router,
   Redirect,
   Route,
   Switch,
