@@ -40,7 +40,7 @@ export const Tank = observer(() => {
         resetError={resetError}
       />
       <div className="mt-3 mb-3" />
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="50%" height="50%">
         <LineChart
           data={tankState.stats}
           margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
@@ -57,6 +57,11 @@ export const Tank = observer(() => {
             stroke="#ff7300"
           />
           <Line connectNulls type="monotone" dataKey="ph" stroke="#387908" />
+          <Line connectNulls type="monotone" dataKey="nitrite" />
+          <Line connectNulls type="monotone" dataKey="nitrate" />
+          <Line connectNulls type="monotone" dataKey="gh" />
+          <Line connectNulls type="monotone" dataKey="kh" />
+          <Line connectNulls type="monotone" dataKey="phosphate" />
         </LineChart>
       </ResponsiveContainer>
     </div>

@@ -7,7 +7,7 @@ const Navbar = () => {
       style={{ backgroundColor: "#d7ecd9" }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/home">
+        <a className="navbar-brand" href="/">
           TrackMyFish
         </a>
         <button
