@@ -59,16 +59,7 @@ class FishStore {
       });
   };
 
-  addFish = ({
-    genus,
-    species,
-    commonName,
-    name,
-    color,
-    gender,
-    purchaseDate,
-    count,
-  }) => {
+  addFish = ({ type, subtype, color, gender, purchaseDate, count }) => {
     if (gender === "") {
       gender = "UNSPECIFIED";
     }
@@ -80,10 +71,8 @@ class FishStore {
       },
       url: config.server.baseURL + "/fish",
       data: {
-        genus,
-        species,
-        commonName,
-        name,
+        type,
+        subtype,
         color,
         gender: gender.toUpperCase(),
         purchaseDate,

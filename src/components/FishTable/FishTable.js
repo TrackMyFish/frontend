@@ -5,10 +5,8 @@ import ReactTable from "react-table-6";
 import "react-table-6/react-table.css";
 
 const FishTable = observer((props) => {
-  const [genus, setGenus] = useState("");
-  const [species, setSpecies] = useState("");
-  const [commonName, setCommonName] = useState("");
-  const [name, setName] = useState("");
+  const [type, setType] = useState("");
+  const [subtype, setSubtype] = useState("");
   const [color, setColor] = useState("");
   const [gender, setGender] = useState("");
   const [purchaseDate, setPurchaseDate] = useState("");
@@ -22,10 +20,8 @@ const FishTable = observer((props) => {
     const uppercaseGender = gender.toUpperCase();
 
     props.addFish({
-      genus,
-      species,
-      commonName,
-      name,
+      type,
+      subtype,
       color,
       gender,
       uppercaseGender,
@@ -50,23 +46,13 @@ const FishTable = observer((props) => {
             headerClassName: "text-start",
           },
           {
-            Header: "Genus",
-            accessor: "genus",
+            Header: "Type",
+            accessor: "type",
             headerClassName: "text-start",
           },
           {
-            Header: "Species",
-            accessor: "species",
-            headerClassName: "text-start",
-          },
-          {
-            Header: "Common Name",
-            accessor: "commonName",
-            headerClassName: "text-start",
-          },
-          {
-            Header: "Name",
-            accessor: "name",
+            Header: "Subtype",
+            accessor: "subtype",
             headerClassName: "text-start",
           },
           {
@@ -84,36 +70,6 @@ const FishTable = observer((props) => {
             Header: "Purchase Date",
             accessor: "purchaseDate",
             headerClassName: "text-start",
-          },
-          {
-            Header: "Ecosystem",
-            columns: [
-              {
-                Header: "Name",
-                accessor: "ecosystemName",
-                headerClassName: "text-start",
-              },
-              {
-                Header: "Type",
-                accessor: "ecosystemType",
-                headerClassName: "text-start",
-              },
-              {
-                Header: "Location",
-                accessor: "ecosystemLocation",
-                headerClassName: "text-start",
-              },
-              {
-                Header: "Salinity",
-                accessor: "salinity",
-                headerClassName: "text-start",
-              },
-              {
-                Header: "Climate",
-                accessor: "climate",
-                headerClassName: "text-start",
-              },
-            ],
           },
           {
             Header: "Count",
@@ -159,71 +115,38 @@ const FishTable = observer((props) => {
                   <div className="row">
                     <div className="col">
                       <div className="mb-3">
-                        <label htmlFor="inputGenus" className="form-label">
-                          Genus
+                        <label htmlFor="inputType" className="form-label">
+                          Type
                         </label>
                         <input
                           type="text"
                           className="form-control"
-                          id="inputGenus"
+                          id="inputType"
                           onChange={(e) =>
-                            setErr("") || setGenus(e.target.value)
+                            setErr("") || setType(e.target.value)
                           }
-                          value={genus}
+                          value={type}
                         />
                       </div>
                     </div>
                     <div className="col">
                       <div className="mb-3">
-                        <label htmlFor="inputSpecies" className="form-label">
-                          Species
+                        <label htmlFor="inputSubtype" className="form-label">
+                          Subtype
                         </label>
                         <input
                           type="text"
                           className="form-control"
-                          id="inputSpecies"
+                          id="inputSubtype"
                           onChange={(e) =>
-                            setErr("") || setSpecies(e.target.value)
+                            setErr("") || setSubtype(e.target.value)
                           }
-                          value={species}
+                          value={subtype}
                         />
                       </div>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col">
-                      <div className="mb-3">
-                        <label htmlFor="inputCommonName" className="form-label">
-                          Common Name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="inputCommonName"
-                          onChange={(e) =>
-                            setErr("") || setCommonName(e.target.value)
-                          }
-                          value={commonName}
-                        />
-                      </div>
-                    </div>
-                    <div className="col">
-                      <div className="mb-3">
-                        <label htmlFor="inputName" className="form-label">
-                          Name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="inputName"
-                          onChange={(e) =>
-                            setErr("") || setName(e.target.value)
-                          }
-                          value={name}
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  <div className="row"></div>
                   <div className="row">
                     <div className="col">
                       <div className="mb-3">
