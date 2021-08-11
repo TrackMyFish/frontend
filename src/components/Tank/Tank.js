@@ -1,18 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { observer } from "mobx-react";
-import {
-  CartesianGrid,
-  Legend,
-  Line,
-  LineChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
 
 import { Navbar } from "../";
-import { TankStatisticsTable } from "../";
+import { TankStatisticsTable, TankStatisticsGraph } from "../";
 import { TankStoreContext } from "../../stores";
 
 export const Tank = observer(() => {
@@ -40,30 +30,7 @@ export const Tank = observer(() => {
         resetError={resetError}
       />
       <div className="mt-3 mb-3" />
-      <ResponsiveContainer width="50%" height="50%">
-        <LineChart
-          data={tankState.stats}
-          margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="testDate" padding={{ left: 30, right: 30 }} />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line
-            connectNulls
-            type="monotone"
-            dataKey="ammonia"
-            stroke="#ff7300"
-          />
-          <Line connectNulls type="monotone" dataKey="ph" stroke="#387908" />
-          <Line connectNulls type="monotone" dataKey="nitrite" />
-          <Line connectNulls type="monotone" dataKey="nitrate" />
-          <Line connectNulls type="monotone" dataKey="gh" />
-          <Line connectNulls type="monotone" dataKey="kh" />
-          <Line connectNulls type="monotone" dataKey="phosphate" />
-        </LineChart>
-      </ResponsiveContainer>
+      <TankStatisticsGraph tankStatistics={tankState.stats} />
     </div>
   );
 });
