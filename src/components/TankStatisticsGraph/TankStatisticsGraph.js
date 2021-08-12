@@ -19,7 +19,7 @@ const TankStatisticsGraph = observer((props) => {
     .sort((a, b) => new Date(a.testDate) - new Date(b.testDate));
 
   return (
-    <ResponsiveContainer width="50%" height="50%">
+    <ResponsiveContainer width="100%" height="50%">
       <LineChart
         data={sorted}
         margin={{ top: 5, right: 20, left: 10, bottom: 5 }}

@@ -18,6 +18,10 @@ export const Fish = observer(() => {
       <Navbar />
       <div className="mt-3 mb-3" />
       <FishTable
+        showAdd
+        showDelete
+        showID
+        enableHash
         fish={fishState.fish}
         addFish={addFish}
         removeFish={removeFish}
