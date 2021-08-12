@@ -33,25 +33,10 @@ const Navbar = () => {
                 Tank
               </Link>
             </li>
-            <li className="nav-item dropdown">
-              {/*  eslint-disable-next-line */}
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Useful Links
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a className="dropdown-item" href="https://www.fishbase.de/">
-                    Fishbase
-                  </a>
-                </li>
-              </ul>
+            <li className="nav-item">
+              <Link className="nav-link" to="/hash-decode">
+                Hash-Decoder
+              </Link>
             </li>
           </ul>
         </div>

@@ -1,19 +1,21 @@
 import Admin from "./Admin";
 import App from "./App";
 import Fish from "./Fish";
-import Navbar from "./Navbar";
+import FishHashDecoder from "./FishHashDecoder";
 import FishTable from "./FishTable";
+import Navbar from "./Navbar";
 import Tank from "./Tank";
-import TankStatisticsTable from "./TankStatisticsTable";
 import TankStatisticsGraph from "./TankStatisticsGraph";
+import TankStatisticsTable from "./TankStatisticsTable";
 
 export {
   Admin,
   App,
   Fish,
-  Navbar,
+  FishHashDecoder,
   FishTable,
+  Navbar,
   Tank,
-  TankStatisticsTable,
   TankStatisticsGraph,
+  TankStatisticsTable,
 };

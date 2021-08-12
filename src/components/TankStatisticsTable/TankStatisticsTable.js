@@ -33,69 +33,6 @@ const TankStatisticsTable = observer((props) => {
   return (
     <div className="container-fluid">
       <h3 className="text-center">Tank Statistics</h3>
-      <ReactTable
-        data={props.tankStatistics}
-        sortable={true}
-        pageSize={props.tankStatistics.length}
-        columns={[
-          {
-            Header: "ID",
-            accessor: "id",
-            headerClassName: "text-start",
-          },
-          {
-            Header: "Test Date",
-            accessor: "testDate",
-            headerClassName: "text-start",
-          },
-          {
-            Header: "Ammonia",
-            accessor: "ammonia",
-            headerClassName: "text-start",
-          },
-          {
-            Header: "pH",
-            accessor: "ph",
-            headerClassName: "text-start",
-          },
-          {
-            Header: "Nitite",
-            accessor: "nitrite",
-            headerClassName: "text-start",
-          },
-          {
-            Header: "Nitrate",
-            accessor: "nitrate",
-            headerClassName: "text-start",
-          },
-          {
-            Header: "GH",
-            accessor: "gh",
-            headerClassName: "text-start",
-          },
-          {
-            Header: "KH",
-            accessor: "kh",
-            headerClassName: "text-start",
-          },
-          {
-            Header: "Phosphate",
-            accessor: "phosphate",
-            headerClassName: "text-start",
-          },
-          {
-            className: "text-center",
-            Cell: (row) => (
-              <button
-                className="btn btn-danger ml-2"
-                onClick={() => props.removeTankStatistic(row.original.id)}
-              >
-                Remove
-              </button>
-            ),
-          },
-        ]}
-      />
       <div className="accordion" id="create-tank-statistic-accordion">
         <div className="accordion-item">
           <h2 className="accordion-header" id="fish-heading">
@@ -285,6 +222,69 @@ const TankStatisticsTable = observer((props) => {
           </div>
         </div>
       </div>
+      <ReactTable
+        data={props.tankStatistics}
+        sortable={true}
+        pageSize={props.tankStatistics.length}
+        columns={[
+          {
+            Header: "ID",
+            accessor: "id",
+            headerClassName: "text-start",
+          },
+          {
+            Header: "Test Date",
+            accessor: "testDate",
+            headerClassName: "text-start",
+          },
+          {
+            Header: "Ammonia",
+            accessor: "ammonia",
+            headerClassName: "text-start",
+          },
+          {
+            Header: "pH",
+            accessor: "ph",
+            headerClassName: "text-start",
+          },
+          {
+            Header: "Nitite",
+            accessor: "nitrite",
+            headerClassName: "text-start",
+          },
+          {
+            Header: "Nitrate",
+            accessor: "nitrate",
+            headerClassName: "text-start",
+          },
+          {
+            Header: "GH",
+            accessor: "gh",
+            headerClassName: "text-start",
+          },
+          {
+            Header: "KH",
+            accessor: "kh",
+            headerClassName: "text-start",
+          },
+          {
+            Header: "Phosphate",
+            accessor: "phosphate",
+            headerClassName: "text-start",
+          },
+          {
+            className: "text-center",
+            Cell: (row) => (
+              <button
+                className="btn btn-danger ml-2"
+                onClick={() => props.removeTankStatistic(row.original.id)}
+              >
+                Remove
+              </button>
+            ),
+          },
+        ]}
+      />
     </div>
   );
 });

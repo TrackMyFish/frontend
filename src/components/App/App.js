@@ -11,7 +11,7 @@ import {
 
 import "./App.scss";
 
-import { Fish, Tank } from "../";
+import { Fish, Tank, FishHashDecoder } from "../";
 
 const App = observer(() => {
   return (
@@ -20,6 +20,7 @@ const App = observer(() => {
         <Redirect exact from="/" to="/fish" />
         <Route path="/fish" component={Fish} />
         <Route path="/tank" component={Tank} />
+        <Route path="/hash-decode" component={FishHashDecoder} />
       </Switch>
     </Router>
   );
